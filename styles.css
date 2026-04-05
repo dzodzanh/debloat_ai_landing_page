@@ -96,7 +96,9 @@ a {
 
 /* Buttons */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   padding: 14px 32px;
   border-radius: var(--radius-pill);
   font-family: 'Inter', sans-serif;
@@ -121,6 +123,16 @@ a {
 .btn-large {
   padding: 18px 40px;
   font-size: 1.1rem;
+}
+
+.apple-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-large .apple-icon {
+  width: 22px;
+  height: 22px;
 }
 
 /* Hero */
@@ -166,95 +178,18 @@ a {
 .phone-screen {
   background: var(--surface);
   border-radius: 26px;
-  padding: 32px 20px;
-  min-height: 420px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 }
 
-.mock-header {
-  font-family: 'Phudu', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 32px;
-}
-
-.mock-score {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.score-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: conic-gradient(var(--green) 0% 78%, var(--divider) 78% 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 12px;
-  position: relative;
-}
-
-.score-circle::before {
-  content: '';
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  background: var(--surface);
-  position: absolute;
-}
-
-.score-value {
-  position: relative;
-  z-index: 1;
-  font-family: 'Phudu', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--green);
-}
-
-.score-label {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-.mock-metrics {
+.phone-screen img {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  height: auto;
+  display: block;
 }
 
-.metric {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  background: var(--bg);
-  padding: 10px 14px;
-  border-radius: var(--radius);
-}
-
-.metric-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.metric-dot.green { background: var(--green); }
-.metric-dot.orange { background: var(--orange); }
-.metric-dot.red { background: var(--red); }
-
-/* Features */
-.features {
-  padding: 80px 0;
+/* Features Showcase */
+.features-showcase {
+  padding: 80px 0 40px;
 }
 
 .section-title {
@@ -267,39 +202,74 @@ a {
 .section-subtitle {
   text-align: center;
   color: var(--text-secondary);
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
 
-.features-grid {
+.showcase-item {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
 }
 
-.feature-card {
-  padding: 32px;
-  border-radius: var(--radius);
-  transition: transform 0.2s;
+.showcase-item.reverse {
+  direction: rtl;
 }
 
-.feature-card:hover {
-  transform: translateY(-4px);
+.showcase-item.reverse > * {
+  direction: ltr;
 }
 
-.feature-icon {
-  font-size: 2rem;
+.showcase-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.showcase-text h3 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
   margin-bottom: 16px;
 }
 
-.feature-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+.showcase-text p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-.feature-card p {
+.showcase-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.showcase-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--text-secondary);
   font-size: 0.95rem;
+}
+
+.showcase-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
 }
 
 /* How It Works */
@@ -404,6 +374,10 @@ a {
   color: var(--text-secondary);
   margin-bottom: 32px;
   font-size: 1.1rem;
+}
+
+.cta-section .btn {
+  justify-content: center;
 }
 
 /* Footer */
@@ -523,8 +497,28 @@ a {
     justify-content: center;
   }
 
-  .features-grid {
+  .showcase-item,
+  .showcase-item.reverse {
     grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .showcase-item .showcase-phone {
+    order: -1;
+  }
+
+  .phone-mockup {
+    width: 240px;
+  }
+
+  .showcase-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .showcase-list {
+    align-items: center;
   }
 
   .steps {

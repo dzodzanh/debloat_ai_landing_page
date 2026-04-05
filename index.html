@@ -22,65 +22,123 @@
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-content">
       <div class="hero-text">
         <h1>Reduce Facial Bloating with <span class="highlight">AI</span></h1>
         <p class="hero-subtitle">Scan your face and food to get personalized insights. Track your progress and achieve a defined, refreshed look.</p>
         <div class="hero-cta">
-          <a href="#" class="btn btn-primary">Download on the App Store</a>
+          <!-- TODO: Replace # with actual App Store URL after publishing -->
+          <a href="#" class="btn btn-primary btn-appstore">
+            <svg class="apple-icon" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            Download on the App Store
+          </a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="phone-mockup">
           <div class="phone-screen">
-            <div class="mock-header">Debloat AI</div>
-            <div class="mock-score">
-              <div class="score-circle">
-                <span class="score-value">78</span>
-              </div>
-              <p class="score-label">Face Score</p>
-            </div>
-            <div class="mock-metrics">
-              <div class="metric"><span class="metric-dot green"></span> Jawline Sharpness</div>
-              <div class="metric"><span class="metric-dot orange"></span> Water Retention</div>
-              <div class="metric"><span class="metric-dot green"></span> Facial Symmetry</div>
-            </div>
+            <img src="images/Home.jpg" alt="Debloat AI Home Screen - Face scan score and daily dashboard">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="features" class="features">
+  <!-- Features Showcase -->
+  <section id="features" class="features-showcase">
     <div class="container">
-      <h2 class="section-title">Powerful Features</h2>
+      <h2 class="section-title">App Features</h2>
       <p class="section-subtitle">Everything you need to understand and reduce facial bloating</p>
-      <div class="features-grid">
-        <div class="feature-card" style="background: #E8F5E9;">
-          <div class="feature-icon">📸</div>
-          <h3>Face Scan</h3>
-          <p>AI-powered analysis of water retention, jawline sharpness, cheek structure, facial definition, symmetry, and under-eye area.</p>
+
+      <!-- Feature 1: Face Analysis -->
+      <div class="showcase-item">
+        <div class="showcase-phone">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <img src="images/Face Analysis.jpg" alt="Face Analysis - Detailed metrics breakdown">
+            </div>
+          </div>
         </div>
-        <div class="feature-card" style="background: #FDEDC8;">
-          <div class="feature-icon">🍎</div>
+        <div class="showcase-text">
+          <span class="showcase-label">AI-Powered</span>
+          <h3>Face Analysis</h3>
+          <p>Take a selfie and let AI analyze your facial bloating across six key metrics: water retention, jawline sharpness, cheek structure, facial definition, symmetry, and under-eye area. Each metric is scored from 0 to 100 so you know exactly where to focus.</p>
+          <ul class="showcase-list">
+            <li>Instant AI-powered scoring</li>
+            <li>6 detailed facial metrics</li>
+            <li>Color-coded severity levels</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 2: Food Analysis -->
+      <div class="showcase-item reverse">
+        <div class="showcase-phone">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <img src="images/Food analysis.jpg" alt="Food Analysis - Nutritional impact on bloating">
+            </div>
+          </div>
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-label">Nutrition</span>
           <h3>Food Scan</h3>
-          <p>Snap a photo of your meal to analyze sodium, sugar, and potassium levels and their impact on facial bloating.</p>
+          <p>Snap a photo of your meal and instantly see how it impacts facial bloating. Get scores for fluid support, inflammation control, digestive ease, and skin support along with a breakdown of key nutrients like sodium, sugar, and potassium.</p>
+          <ul class="showcase-list">
+            <li>Photo-based food recognition</li>
+            <li>Bloating impact scores</li>
+            <li>Key nutrient breakdown</li>
+          </ul>
         </div>
-        <div class="feature-card" style="background: #E0F7FA;">
-          <div class="feature-icon">📊</div>
+      </div>
+
+      <!-- Feature 3: Guided Exercises -->
+      <div class="showcase-item">
+        <div class="showcase-phone">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <img src="images/Bonus.jpg" alt="Guided facial exercises with step-by-step instructions">
+            </div>
+          </div>
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-label">Wellness</span>
+          <h3>Facial Exercises</h3>
+          <p>Follow guided facial exercises designed to reduce puffiness and improve muscle tone. Each exercise includes step-by-step instructions and a built-in timer so you can perform routines like under-eye de-puffing and jawline sculpting with ease.</p>
+          <ul class="showcase-list">
+            <li>Step-by-step guided routines</li>
+            <li>Built-in countdown timer</li>
+            <li>Targets puffiness and muscle tone</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 4: Progress Tracking -->
+      <div class="showcase-item reverse">
+        <div class="showcase-phone">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <img src="images/Progress.jpg" alt="Progress tracking with charts and analysis history">
+            </div>
+          </div>
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-label">Insights</span>
           <h3>Progress Tracking</h3>
-          <p>Visualize your improvement over time with detailed charts and scan history on your personal dashboard.</p>
-        </div>
-        <div class="feature-card" style="background: #FEEEC8;">
-          <div class="feature-icon">💧</div>
-          <h3>Daily Habits</h3>
-          <p>Track water intake, exercise, and daily wellness goals to build habits that reduce bloating.</p>
+          <p>See your transformation over time with detailed progress charts. Track your best score, overall improvement, and total analyses. View your full scan history and compare results to stay motivated on your debloating journey.</p>
+          <ul class="showcase-list">
+            <li>Visual progress charts</li>
+            <li>Score trend analysis</li>
+            <li>Complete scan history</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- How It Works -->
   <section id="how-it-works" class="how-it-works">
     <div class="container">
       <h2 class="section-title">How It Works</h2>
@@ -107,6 +165,7 @@
     </div>
   </section>
 
+  <!-- Scoring -->
   <section class="scoring">
     <div class="container">
       <h2 class="section-title">Smart Scoring System</h2>
@@ -128,11 +187,16 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container">
       <h2>Ready to Start Your Journey?</h2>
       <p>Download Debloat AI and take your first scan today.</p>
-      <a href="#" class="btn btn-primary btn-large">Download on the App Store</a>
+      <!-- TODO: Replace # with actual App Store URL after publishing -->
+      <a href="#" class="btn btn-primary btn-large btn-appstore">
+        <svg class="apple-icon" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download on the App Store
+      </a>
     </div>
   </section>
 

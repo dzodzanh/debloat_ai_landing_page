@@ -25,7 +25,7 @@
     <div class="container">
       <div class="privacy-content">
         <h1>Privacy Policy</h1>
-        <p class="privacy-updated">Last updated: April 5, 2026</p>
+        <p class="privacy-updated">Last updated: April 8, 2026</p>
 
         <p>Anywhere Studio ("we", "us", or "our") operates the Debloat AI mobile application (the "App"). This Privacy Policy explains how we collect, use, and protect your information when you use our App.</p>
 
@@ -64,16 +64,40 @@
           <li>Uninstalling the app removes all locally stored data</li>
         </ul>
 
-        <h2>4. AI Image Analysis</h2>
-        <p>When you perform a face scan or food scan:</p>
+        <h2>4. Face Data Collection, Use, and Retention</h2>
+
+        <h3>What Face Data We Collect</h3>
+        <p>The App collects <strong>standard photographs (selfies) of your face</strong> captured via your device's camera or selected from your photo library. We do <strong>not</strong> collect biometric identifiers, face geometry, depth maps, facial recognition templates, or any other biometric data. The photograph is a standard JPEG image — no facial mapping or biometric extraction is performed at any point.</p>
+
+        <h3>How We Use Face Data</h3>
+        <p>Face photographs are used solely for AI-powered visual analysis of facial bloating indicators. The AI evaluates the following visual attributes from the photo:</p>
         <ul>
-          <li>Your photo is sent to our secure server for AI analysis</li>
-          <li>The AI processes the image and returns analysis results</li>
-          <li>Photos are processed in real-time and are <strong>not permanently stored</strong> on our servers</li>
-          <li>Analysis results are stored locally on your device</li>
+          <li>Water retention</li>
+          <li>Jawline sharpness</li>
+          <li>Cheek structure</li>
+          <li>Facial definition</li>
+          <li>Facial symmetry</li>
+          <li>Under-eye area</li>
+        </ul>
+        <p>The AI returns a numerical score (0–100) for each indicator along with a text-based analysis. These results are used to help you track facial bloating changes over time. Face data is <strong>never</strong> used for facial recognition, identity verification, or any purpose other than bloating analysis.</p>
+
+        <h3>Third-Party Sharing of Face Data</h3>
+        <p>To perform the AI analysis, your face photo is transmitted (as a base64-encoded image over HTTPS) to our <strong>Cloudflare Worker</strong>, which acts as a stateless proxy. The Cloudflare Worker immediately forwards the image to the <strong>OpenAI API</strong> (gpt-4o-mini) for analysis. The Cloudflare Worker is fully stateless — it does not log, cache, or store your image in any way. Once OpenAI returns the analysis results, the image is discarded. OpenAI processes API data in accordance with their <a href="https://openai.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and does not use API inputs for model training. <strong>No other third parties receive your face data.</strong></p>
+
+        <h3>Face Data Retention and Storage</h3>
+        <p>Face photographs and their analysis results are stored <strong>exclusively on your device</strong> in a local on-device database (Hive). No face data is stored on our servers or any cloud service. Specifically:</p>
+        <ul>
+          <li>Face photos are saved in the app's local documents directory on your device</li>
+          <li>Analysis results (scores and text) are saved in an on-device database</li>
+          <li>Our server (Cloudflare Worker) is stateless and retains no image data whatsoever</li>
+          <li>You can <strong>delete individual face scans</strong> (both the photo and analysis) at any time from within the App</li>
+          <li>Uninstalling the App removes all face data from your device</li>
         </ul>
 
-        <h2>5. Device Permissions</h2>
+        <h2>5. Food Scan Image Analysis</h2>
+        <p>When you perform a food scan, your food photo is processed using the same secure pipeline described above (Cloudflare Worker proxy to OpenAI). Food photos follow the same data handling practices: processed in real-time, not stored on our servers, and results saved locally on your device.</p>
+
+        <h2>6. Device Permissions</h2>
         <p>The App requests the following permissions:</p>
         <ul>
           <li><strong>Camera:</strong> Required to capture selfies for face scans and photos for food scans</li>
@@ -82,7 +106,7 @@
         </ul>
         <p>These permissions are only used for the stated purposes and can be revoked at any time through your device settings.</p>
 
-        <h2>6. Third-Party Services</h2>
+        <h2>7. Third-Party Services</h2>
         <p>We use the following third-party services that may collect data according to their own privacy policies:</p>
         <ul>
           <li><strong>Firebase Analytics &amp; Crashlytics (Google):</strong> For app analytics and crash reporting. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a></li>
@@ -90,10 +114,10 @@
           <li><strong>OpenAI:</strong> For AI-powered image analysis via a secure proxy. <a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI Privacy Policy</a></li>
         </ul>
 
-        <h2>7. Data Sharing</h2>
+        <h2>8. Data Sharing</h2>
         <p>We do <strong>not</strong> sell your personal information. We only share data with third-party services as described above, which is necessary to provide the App's core functionality.</p>
 
-        <h2>8. Data Security</h2>
+        <h2>9. Data Security</h2>
         <p>We take reasonable measures to protect your information, including:</p>
         <ul>
           <li>Local-first data storage on your device</li>
@@ -101,10 +125,10 @@
           <li>No permanent storage of photos on our servers</li>
         </ul>
 
-        <h2>9. Children's Privacy</h2>
+        <h2>10. Children's Privacy</h2>
         <p>The App is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, please contact us so we can promptly remove it.</p>
 
-        <h2>10. Your Rights</h2>
+        <h2>11. Your Rights</h2>
         <p>You have the right to:</p>
         <ul>
           <li>Delete your local data by uninstalling the App</li>
@@ -113,12 +137,12 @@
           <li>Request information about the data we process about you</li>
         </ul>
 
-        <h2>11. Changes to This Policy</h2>
+        <h2>12. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
 
-        <h2>12. Contact Us</h2>
+        <h2>13. Contact Us</h2>
         <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-        <p><a href="mailto:support@debloatai.com">support@debloatai.com</a></p>
+        <p><a href="mailto:thaole.anywherestudio@outlook.com">thaole.anywherestudio@outlook.com</a></p>
       </div>
     </div>
   </main>
@@ -131,7 +155,7 @@
       </div>
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
-        <a href="mailto:support@debloatai.com">Contact</a>
+        <a href="mailto:thaole.anywherestudio@outlook.com">Contact</a>
       </div>
     </div>
   </footer>
